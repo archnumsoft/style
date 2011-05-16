@@ -49,14 +49,30 @@
 \colorlet{specmethodcolour}{violet}
 \colorlet{indendifiercolour}{green!70!white}
 
-%--- C++ ---
-
-\lstdefinestyle{cppstyle}{
-language=c++,
+% Common style
+\lstdefinestyle{c@mmon}{%
 showtabs=true,
 tab=,
 tabsize=2,
 basicstyle=\ttfamily\footnotesize,
+breaklines=true,
+breakatwhitespace= true,
+aboveskip=1ex,
+frame=trbl,
+rulecolor=\color{black},
+backgroundcolor=\color{yellow!10}
+}
+\lstset{style=c@mmon}
+
+%--- Typesetting LaTeX ---
+\lstnewenvironment{latexcode}{\lstset{language=[LaTeX]TeX,style=c@mmon}}{}
+\newcommand{\latexinline}{\lstinline[language=TeX,style=c@mmon,basicstyle=\ttfamily]}
+
+%--- C++ ---
+
+\lstdefinestyle{cppstyle}{
+language=c++,
+style=c@mmon,
 stringstyle=\color{stringcolour},
 showstringspaces=false,
 alsoletter={1234567890},
@@ -98,19 +114,12 @@ commentstyle=\color{commentcolour}\slshape,
 morecomment=[l][commentstyle]{//},
 morecomment=[s][commentstyle]{/*}{*/},
 morestring=[b][stringstyle]",
-morestring=[d][stringstyle]',
-breaklines=true,
-breakatwhitespace= true,
-xleftmargin=\framemargin,
-xrightmargin=\framemargin,
-aboveskip=1ex,
-frame=trbl,
-rulecolor=\color{black!40},
-backgroundcolor=\color{yellow!10}
+morestring=[d][stringstyle]'
 }
 
 \newcommand{\inputcpp}[1]{\lstinputlisting[style=cppstyle, title={\codetitlestyle{C++ code}}, belowcaptionskip=\belowtitleskip]{#1}}
 \lstnewenvironment{c++}[1][]{\lstset{style=cppstyle, title={\codetitlestyle{C++ code}}, belowcaptionskip=\belowtitleskip}}{}
+\newcommand{\cpp}{\lstinline[style=cppstyle,basicstyle=\ttfamily]}
 
 %--- Python ---
 
@@ -160,8 +169,6 @@ backgroundcolor=\color{yellow!10}
  ,%
  breaklines=true,
  breakatwhitespace= true,
- xleftmargin=\framemargin,
- xrightmargin=\framemargin,
  aboveskip=1ex,
  frame=trbl,
  framesep=.3ex,
@@ -175,137 +182,130 @@ backgroundcolor=\color{yellow!10}
 
 %--- XML ---
 
-% \lstdefinestyle{xmlstyle}{
-% language=xml,
-% showtabs=true,
-% tab=,
-% tabsize=2,
-% basicstyle=\ttfamily\footnotesize,
-% stringstyle=\color{stringcolour},
-% showstringspaces=false,
-% alsoletter={1234567890},
-% emphstyle=\color{exceptioncolour}\bfseries,
-% commentstyle=\color{commentcolour}\slshape,
-% breaklines=true,
-% breakatwhitespace= true,
-% xleftmargin=\framemargin,
-% xrightmargin=\framemargin,
-% aboveskip=1ex,
-% frame=trbl,
-% framesep=.3ex,
-% rulecolor=\color{black!40},
-% backgroundcolor=\color{yellow!10}
-% }
+\lstdefinestyle{xmlstyle}{
+language=xml,
+showtabs=true,
+tab=,
+tabsize=2,
+basicstyle=\ttfamily\footnotesize,
+stringstyle=\color{stringcolour},
+showstringspaces=false,
+alsoletter={1234567890},
+emphstyle=\color{exceptioncolour}\bfseries,
+commentstyle=\color{commentcolour}\slshape,
+breaklines=true,
+breakatwhitespace= true,
+aboveskip=1ex,
+frame=trbl,
+framesep=.3ex,
+rulecolor=\color{black!40},
+backgroundcolor=\color{yellow!10}
+}
 
-% \newcommand{\inputxml}[1]{\lstinputlisting[style=xmlstyle, title={\codetitlestyle{XML code}}, belowcaptionskip=\belowtitleskip]{#1}}
-% \lstnewenvironment{xml}[1][]{\lstset{style=xmlstyle, title={\codetitlestyle{XML code}}, belowcaptionskip=\belowtitleskip}}{}
+\newcommand{\inputxml}[1]{\lstinputlisting[style=xmlstyle, title={\codetitlestyle{XML code}}, belowcaptionskip=\belowtitleskip]{#1}}
+\lstnewenvironment{xml}[1][]{\lstset{style=xmlstyle, title={\codetitlestyle{XML code}}, belowcaptionskip=\belowtitleskip}}{}
 
 % %--- Bash ---
 
-% \lstdefinestyle{bashstyle}{
-% language=bash,
-% showtabs=true,
-% tab=,
-% tabsize=2,
-% basicstyle=\ttfamily\footnotesize,
-% stringstyle=\color{stringcolour},
-% showstringspaces=false,
-% alsoletter={1234567890},
-% otherkeywords={\ , \}, \{, \%, \&, \|},
-% emphstyle=\color{exceptioncolour}\bfseries,
-% commentstyle=\color{commentcolour}\slshape,
-% breaklines=true,
-% breakatwhitespace= true,
-% xleftmargin=\framemargin,
-% xrightmargin=\framemargin,
-% aboveskip=1ex,
-% frame=trbl,
-% framesep=.3ex,
-% rulecolor=\color{black!40},
-% backgroundcolor=\color{yellow!10}
-% }
+\lstdefinestyle{bashstyle}{
+language=bash,
+showtabs=true,
+tab=,
+tabsize=2,
+basicstyle=\ttfamily\footnotesize,
+stringstyle=\color{stringcolour},
+showstringspaces=false,
+alsoletter={1234567890},
+otherkeywords={\ , \}, \{, \%, \&, \|},
+emphstyle=\color{exceptioncolour}\bfseries,
+commentstyle=\color{commentcolour}\slshape,
+breaklines=true,
+breakatwhitespace= true,
+aboveskip=1ex,
+frame=trbl,
+framesep=.3ex,
+rulecolor=\color{black!40},
+backgroundcolor=\color{yellow!10}
+}
 
-% \newcommand{\inputbash}[1]{\lstinputlisting[style=bashstyle, title={\codetitlestyle{Bash code}}, belowcaptionskip=\belowtitleskip]{#1}}
-% \lstnewenvironment{bash}[1][]{\lstset{style=bashstyle, title={\codetitlestyle{Bash code}}, belowcaptionskip=\belowtitleskip}}{}
+\newcommand{\inputbash}[1]{\lstinputlisting[style=bashstyle, title={\codetitlestyle{Bash code}}, belowcaptionskip=\belowtitleskip]{#1}}
+\lstnewenvironment{bash}[1][]{\lstset{style=bashstyle, title={\codetitlestyle{Bash code}}, belowcaptionskip=\belowtitleskip}}{}
+\lstnewenvironment{csh}[1][]{\lstset{style=bashstyle, title={\codetitlestyle{Csh code}}, belowcaptionskip=\belowtitleskip}}{}
 
 % %--- SWIG ---
 
-% \newcommand{\inputswig}[1]{\lstinputlisting[style=cppstyle, title={\codetitlestyle{SWIG code}}, belowcaptionskip=\belowtitleskip]{#1}}
-% \lstnewenvironment{swigcode}[1][]{\lstset{style=cppstyle, title={\codetitlestyle{SWIG code}}, belowcaptionskip=\belowtitleskip}}{}
+\newcommand{\inputswig}[1]{\lstinputlisting[style=cppstyle, title={\codetitlestyle{SWIG code}}, belowcaptionskip=\belowtitleskip]{#1}}
+\lstnewenvironment{swigcode}[1][]{\lstset{style=cppstyle, title={\codetitlestyle{SWIG code}}, belowcaptionskip=\belowtitleskip}}{}
 
 % %--- UFL ---
 
-% \newcommand{\inputufl}[1]{\lstinputlisting[style=pythonstyle, title={\codetitlestyle{UFL code}}, belowcaptionskip=\belowtitleskip]{#1}}
-% \lstnewenvironment{uflcode}[1][]{\lstset{style=pythonstyle, title={\codetitlestyle{UFL code}}, belowcaptionskip=\belowtitleskip}}{}
+\newcommand{\inputufl}[1]{\lstinputlisting[style=pythonstyle, title={\codetitlestyle{UFL code}}, belowcaptionskip=\belowtitleskip]{#1}}
+\lstnewenvironment{uflcode}[1][]{\lstset{style=pythonstyle, title={\codetitlestyle{UFL code}}, belowcaptionskip=\belowtitleskip}}{}
 
 % %--- MATLAB ---
 
-% \lstnewenvironment{matlab}[1][]{
-% \lstset{
-% language=matlab,
-% basicstyle=\ttfamily\small,
-% backgroundcolor=\color{blue!10},
-% frame=trbl,
-% rulecolor=\color{black!40},
-% emphstyle=\color{blue},
-% commentstyle=\color{commentcolour}\slshape,
-% keywordstyle=\color{keywordcolour}\bfseries,
-% }}{}
+\lstnewenvironment{matlab}[1][]{
+\lstset{
+language=matlab,
+basicstyle=\ttfamily\small,
+backgroundcolor=\color{blue!10},
+frame=trbl,
+rulecolor=\color{black!40},
+emphstyle=\color{blue},
+commentstyle=\color{commentcolour}\slshape,
+keywordstyle=\color{keywordcolour}\bfseries,
+}}{}
 
 % %--- Other ---
 
-% \lstdefinestyle{anycodestyle}{
-% language=bash,
-% showtabs=true,
-% tab=,
-% tabsize=2,
-% basicstyle=\ttfamily\footnotesize,
-% stringstyle=\color{stringcolour},
-% showstringspaces=false,
-% alsoletter={1234567890},
-% emphstyle=\color{exceptioncolour}\bfseries,
-% commentstyle=\color{commentcolour}\slshape,
-% breaklines=true,
-% breakatwhitespace= true,
-% xleftmargin=\framemargin,
-% xrightmargin=\framemargin,
-% aboveskip=1ex,
-% frame=trbl,
-% framesep=.3ex,
-% rulecolor=\color{black!40},
-% backgroundcolor=\color{yellow!10}
-% }
+\lstdefinestyle{anycodestyle}{
+language=bash,
+showtabs=true,
+tab=,
+tabsize=2,
+basicstyle=\ttfamily\footnotesize,
+stringstyle=\color{stringcolour},
+showstringspaces=false,
+alsoletter={1234567890},
+emphstyle=\color{exceptioncolour}\bfseries,
+commentstyle=\color{commentcolour}\slshape,
+breaklines=true,
+breakatwhitespace= true,
+aboveskip=1ex,
+frame=trbl,
+framesep=.3ex,
+rulecolor=\color{black!40},
+backgroundcolor=\color{yellow!10}
+}
 
-% \newcommand{\inputanycode}[1]{\lstinputlisting[style=anycodestyle, title={\codetitlestyle{Code}}, belowcaptionskip=\belowtitleskip]{#1}}
-% \lstnewenvironment{anycode}[1][]{\lstset{style=anycodestyle, title={\codetitlestyle{Code}}, belowcaptionskip=\belowtitleskip}}{}
+\newcommand{\inputanycode}[1]{\lstinputlisting[style=anycodestyle, title={\codetitlestyle{Code}}, belowcaptionskip=\belowtitleskip]{#1}}
+\lstnewenvironment{anycode}[1][]{\lstset{style=anycodestyle, title={\codetitlestyle{Code}}, belowcaptionskip=\belowtitleskip}}{}
 
 % %--- Output from running programs ---
 
-% \lstnewenvironment{progoutput}[1][]{\lstset{style=gencodestyle, title={\codetitlestyle{Output}}, belowcaptionskip=\belowtitleskip}}{}
+\lstnewenvironment{progoutput}[1][]{\lstset{style=gencodestyle, title={\codetitlestyle{Output}}, belowcaptionskip=\belowtitleskip}}{}
 
 % %--- Generated code ---
 
-% \lstdefinestyle{gencodestyle}{
-% language=bash,
-% showtabs=true,
-% tab=,
-% tabsize=2,
-% basicstyle=\ttfamily\footnotesize,
-% stringstyle=\color{stringcolour},
-% showstringspaces=false,
-% alsoletter={1234567890},
-% emphstyle=\color{exceptioncolour}\bfseries,
-% commentstyle=\color{commentcolour}\slshape,
-% breaklines=true,
-% breakatwhitespace= true,
-% xleftmargin=\framemargin,
-% xrightmargin=\framemargin,
-% aboveskip=1ex,
-% frame=trbl,
-% framesep=.3ex,
-% rulecolor=\color{black!40},
-% backgroundcolor=\color{yellow!10}
-% }
+\lstdefinestyle{gencodestyle}{
+language=bash,
+showtabs=true,
+tab=,
+tabsize=2,
+basicstyle=\ttfamily\footnotesize,
+stringstyle=\color{stringcolour},
+showstringspaces=false,
+alsoletter={1234567890},
+emphstyle=\color{exceptioncolour}\bfseries,
+commentstyle=\color{commentcolour}\slshape,
+breaklines=true,
+breakatwhitespace= true,
+aboveskip=1ex,
+frame=trbl,
+framesep=.3ex,
+rulecolor=\color{black!40},
+backgroundcolor=\color{yellow!10}
+}
 
-% \newcommand{\inputgencode}[1]{\lstinputlisting[style=cppstyle, title={\codetitlestyle{Generated code}}, belowcaptionskip=\belowtitleskip]{#1}}
-% \lstnewenvironment{gencode}[1][]{\lstset{style=gencodestyle, title={\codetitlestyle{Generated code}}, belowcaptionskip=\belowtitleskip}}{}
+\newcommand{\inputgencode}[1]{\lstinputlisting[style=cppstyle, title={\codetitlestyle{Generated code}}, belowcaptionskip=\belowtitleskip]{#1}}
+\lstnewenvironment{gencode}[1][]{\lstset{style=gencodestyle, title={\codetitlestyle{Generated code}}, belowcaptionskip=\belowtitleskip}}{}
