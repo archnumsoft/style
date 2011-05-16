@@ -12,7 +12,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{ae,aecompl}
 \RequirePackage{hyperref}
-%\RequirePackage{listings}
+\RequirePackage{listings}
 \RequirePackage{fancyhdr}
 \RequirePackage[noblocks]{authblk}
 \RequirePackage{a4wide}
