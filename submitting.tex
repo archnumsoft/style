@@ -1,7 +1,6 @@
 % $Id$
 \documentclass{ansarticle}
-%
-%
+
 \title{Preparing and submitting articles for the Archive of Numerical
   Software}
 \author[1]{Wolfgang Bangerth}
@@ -13,8 +12,13 @@
 \affil[2]{IWR, Universit\"at Heidelberg}
 \affil[3]{Sandia National Laboratories}
 \affil[4]{Simula, Oslo}
+\runningtitle{Preparing articles for ANS}
+\runningauthor{Bangerth, Bastian, Kanschat, Heroux, Logg}
+
 \begin{document}
+
 \maketitle
+
 \begin{abstract}
   This document describes the general structure of the
   \texttt{ansarticle} document class and serves as an example for its
@@ -23,13 +27,20 @@
   fixes most style parameters to the preferred style of the Archive of
   Numerical Software.
 \end{abstract}
+
 \section{Implementation}
+
 The file \texttt{ansarticle.cls} loads the standard LaTeX
 \texttt{article.cls} and applies some changes to the layout.
+
 \subsection{Requirements}
+
+Test ccc $f(x) = u$
+
 Upon loading, \texttt{ansarticle.cls} requires the following packages:
+
 \begin{itemize}
-\item \texttt{times} and \texttt{mathtpm} to use postscript fonts
+\item \texttt{times} and \texttt{mathptm} to use postscript fonts
 \item \texttt{hyperref} in order to typeset hyper-links in the text
 \item \texttt{fancyhdr} for page headers and footers
 \item \texttt{authblk} for more convenient handling of author and
@@ -37,10 +48,150 @@ Upon loading, \texttt{ansarticle.cls} requires the following packages:
 \item \texttt{listings} for source code listings
 \end{itemize}
 These packages are part of standard \TeX{} distributions.
+
 \section{Usage}
+
+Fill some pages so we see what it looks like:
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+vestibulum justo ut felis porttitor at egestas mauris varius. Etiam
+risus nibh, posuere vitae laoreet vitae, consectetur id risus. Vivamus
+adipiscing diam eget enim congue vel ultrices mi dignissim. Nullam
+volutpat, nunc eu ullamcorper tempus, eros orci rutrum enim, ac luctus
+nulla urna et felis. Sed auctor, dolor vel pellentesque tempus, magna
+tellus feugiat enim, nec rhoncus augue est sit amet nisl. Curabitur ac
+nisi eu orci porttitor egestas in sed tortor. Aliquam tincidunt orci
+vitae magna luctus eu gravida dolor hendrerit. Duis sit amet metus
+justo, vitae scelerisque neque. Nam vitae nisi eros. Curabitur
+convallis faucibus elit ut auctor. Morbi vel urna sit amet nisi
+pharetra laoreet. Maecenas vitae enim elit. Donec varius orci nisi, id
+blandit elit. Aliquam ornare pharetra ante, in porttitor erat mollis
+sed. Suspendisse potenti. Donec id tortor odio, et egestas
+eros. Aenean nec orci at diam porta tincidunt. Nam molestie tempus
+vestibulum. Praesent sed felis at est sodales elementum laoreet non
+risus. Nam urna augue, pulvinar et adipiscing vita
+e, auctor at sem.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+vestibulum justo ut felis porttitor at egestas mauris varius. Etiam
+risus nibh, posuere vitae laoreet vitae, consectetur id risus. Vivamus
+adipiscing diam eget enim congue vel ultrices mi dignissim. Nullam
+volutpat, nunc eu ullamcorper tempus, eros orci rutrum enim, ac luctus
+nulla urna et felis. Sed auctor, dolor vel pellentesque tempus, magna
+tellus feugiat enim, nec rhoncus augue est sit amet nisl. Curabitur ac
+nisi eu orci porttitor egestas in sed tortor. Aliquam tincidunt orci
+vitae magna luctus eu gravida dolor hendrerit. Duis sit amet metus
+justo, vitae scelerisque neque. Nam vitae nisi eros. Curabitur
+convallis faucibus elit ut auctor. Morbi vel urna sit amet nisi
+pharetra laoreet. Maecenas vitae enim elit. Donec varius orci nisi, id
+blandit elit. Aliquam ornare pharetra ante, in porttitor erat mollis
+sed. Suspendisse potenti. Donec id tortor odio, et egestas
+eros. Aenean nec orci at diam porta tincidunt. Nam molestie tempus
+vestibulum. Praesent sed felis at est sodales elementum laoreet non
+risus. Nam urna augue, pulvinar et adipiscing vita
+e, auctor at sem.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+vestibulum justo ut felis porttitor at egestas mauris varius. Etiam
+risus nibh, posuere vitae laoreet vitae, consectetur id risus. Vivamus
+adipiscing diam eget enim congue vel ultrices mi dignissim. Nullam
+volutpat, nunc eu ullamcorper tempus, eros orci rutrum enim, ac luctus
+nulla urna et felis. Sed auctor, dolor vel pellentesque tempus, magna
+tellus feugiat enim, nec rhoncus augue est sit amet nisl. Curabitur ac
+nisi eu orci porttitor egestas in sed tortor. Aliquam tincidunt orci
+vitae magna luctus eu gravida dolor hendrerit. Duis sit amet metus
+justo, vitae scelerisque neque. Nam vitae nisi eros. Curabitur
+convallis faucibus elit ut auctor. Morbi vel urna sit amet nisi
+pharetra laoreet. Maecenas vitae enim elit. Donec varius orci nisi, id
+blandit elit. Aliquam ornare pharetra ante, in porttitor erat mollis
+sed. Suspendisse potenti. Donec id tortor odio, et egestas
+eros. Aenean nec orci at diam porta tincidunt. Nam molestie tempus
+vestibulum. Praesent sed felis at est sodales elementum laoreet non
+risus. Nam urna augue, pulvinar et adipiscing vita
+e, auctor at sem.
+
+\section{Testing some math}
+
+Consider $f(x) = x^2$
+
+\section{Testing some code}
+
+\begin{c++}
+// Get dimensions of local mesh_data
+const uint num_local_cells = mesh_data.cell_vertices.size();
+assert(global_cell_indices.size() == num_local_cells);
+const uint num_cell_vertices = mesh_data.cell_vertices[0].size();
+
+// Build array of cell-vertex connectivity and partition vector
+std::vector<uint> cell_vertices;
+std::vector<uint> cell_vertices_partition;
+const uint size = num_local_cells*(num_cell_vertices + 1);
+cell_vertices.reserve(size);
+cell_vertices_partition.reserve(size);
+for (uint i = 0; i < num_local_cells; i++)
+{
+  cell_vertices.push_back(global_cell_indices[i]);
+  cell_vertices_partition.push_back(cell_partition[i]);
+  for (uint j = 0; j < num_cell_vertices; j++)
+  {
+    cell_vertices.push_back(mesh_data.cell_vertices[i][j]);
+    cell_vertices_partition.push_back(cell_partition[i]);
+  }
+}
+
+// Distribute cell-vertex connectivity
+MPI::distribute(cell_vertices, cell_vertices_partition);
+assert(cell_vertices.size());
+cell_vertices_partition.clear();
+\end{c++}
+
+\begin{python}
+# Time-stepping
+t = dt
+p = Progress("Time-stepping")
+while t < T + DOLFIN_EPS:
+
+    # Update pressure boundary condition
+    p_in.t = t
+
+    # Compute tentative velocity step
+    begin("Computing tentative velocity")
+    b1 = assemble(L1)
+    [bc.apply(A1, b1) for bc in bcu]
+    solve(A1, u1.vector(), b1, "gmres", "ilu")
+    end()
+
+    # Pressure correction
+    begin("Computing pressure correction")
+    b2 = assemble(L2)
+    [bc.apply(A2, b2) for bc in bcp]
+    solve(A2, p1.vector(), b2, "gmres", "amg_hypre")
+    end()
+
+    # Velocity correction
+    begin("Computing velocity correction")
+    b3 = assemble(L3)
+    [bc.apply(A3, b3) for bc in bcu]
+    solve(A3, u1.vector(), b3, "gmres", "ilu")
+    end()
+
+    # Plot solution
+    plot(p1, title="Pressure", rescale=True)
+    plot(u1, title="Velocity", rescale=True)
+
+    # Save to file
+    ufile << u1
+    pfile << p1
+
+    # Move to next time step
+    u0.assign(u1)
+    p.update(t / T)
+    t += dt
+\end{python}
+
 \end{document}
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
-%%% End: 
+%%% End:
