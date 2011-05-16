@@ -16,6 +16,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage[noblocks]{authblk}
 \RequirePackage{a4wide}
+\RequirePackage{lastpage}
 
 % Font selection
 \RequirePackage{pxfonts}        % Palatino for running text and math
@@ -42,8 +43,10 @@
 \fancyhead[RO, LE]{\thepage}
 \fancyhead[LO]{\@runningtitle}
 \fancyhead[RE]{\@runningauthor}
-\fancyfoot[RO, LE]{%
-  \footnotesize Archive of Numerical Software, Volume XX, Number XX, 2011}
+\fancyfoot[RE,LO]{%
+  \footnotesize \copyright{} by the authors, 2011}
+\fancyfoot[RO,LE]{%
+  \footnotesize Archive of Numerical Software, Volume XX(XX): pp. 1--\pageref{LastPage}, 2011}
 \fancyfoot[C]{}
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{fancy}

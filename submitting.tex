@@ -114,25 +114,52 @@ e, auctor at sem.
 
 Consider $f(x) = x^2$
 
-\section{Testing some code}
+\section{Code samples}
+
+All code listings are based on the \texttt{listings}
+package~\cite{HeinzMoses07}.  The style file \texttt{anslistings.sty},
+automatically included by \texttt{ansarticle.cls}, provides standard
+styles for a variety of common programming languages. Changing any
+listing style parameters is not encouraged and may lead to unexpected
+outcomes in the final publication.
+
+Below, we provide samples of listings for the languages available. If
+a language is missing, please contact the managing editor for an
+updated style file.
+
+\subsection{C++}
+
+C++ code should be compliant with the current C++ standard. Two
+commands are provided to prettyprint C++ code. First, an environment
+to put C++ code into the LaTeX file, namely
+
+\begin{latexcode}
+\begin{c++}
+  // Your C++ code here
+\end{c++}
+\end{latexcode}
+
+Alternatively, it is possible to use \lstinline[language=TeX]!\inputcpp{file.cc}!
+to print the C++ code in a file. Here is an example what C++ code
+looks like.
 
 \begin{c++}
 // Get dimensions of local mesh_data
-const uint num_local_cells = mesh_data.cell_vertices.size();
+const unsigned int num_local_cells = mesh_data.cell_vertices.size();
 assert(global_cell_indices.size() == num_local_cells);
-const uint num_cell_vertices = mesh_data.cell_vertices[0].size();
+const unsigned int num_cell_vertices = mesh_data.cell_vertices[0].size();
 
 // Build array of cell-vertex connectivity and partition vector
-std::vector<uint> cell_vertices;
-std::vector<uint> cell_vertices_partition;
-const uint size = num_local_cells*(num_cell_vertices + 1);
+std::vector<unsigned int> cell_vertices;
+std::vector<unsigned int> cell_vertices_partition;
+const unsigned int size = num_local_cells*(num_cell_vertices + 1);
 cell_vertices.reserve(size);
 cell_vertices_partition.reserve(size);
-for (uint i = 0; i < num_local_cells; i++)
+for (unsigned int i = 0; i < num_local_cells; i++)
 {
   cell_vertices.push_back(global_cell_indices[i]);
   cell_vertices_partition.push_back(cell_partition[i]);
-  for (uint j = 0; j < num_cell_vertices; j++)
+  for (unsigned int j = 0; j < num_cell_vertices; j++)
   {
     cell_vertices.push_back(mesh_data.cell_vertices[i][j]);
     cell_vertices_partition.push_back(cell_partition[i]);
@@ -145,6 +172,7 @@ assert(cell_vertices.size());
 cell_vertices_partition.clear();
 \end{c++}
 
+\subsection{Python}
 \begin{python}
 # Time-stepping
 t = dt
@@ -189,6 +217,8 @@ while t < T + DOLFIN_EPS:
     t += dt
 \end{python}
 
+\bibliographystyle{abbrv}
+\bibliography{submitting}
 \end{document}
 
 %%% Local Variables:
