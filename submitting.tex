@@ -1,11 +1,12 @@
 % $Id$
 \documentclass{ansarticle}
 
-\title{Preparing and submitting articles for the Archive of Numerical
-  Software}
+\title{Preparing articles for submission to the\\
+  Archive of Numerical Software}
 \author[1]{Wolfgang Bangerth}
 \author[2]{Peter Bastian}
-\author[1]{Guido Kanschat\thanks{NSF}}
+\author[1]{Guido Kanschat\thanks{Additional thanks to my neighbor's dog
+  for waking me up on time to work on this style file}}
 \author[3]{Michael Heroux}
 \author[4]{Anders Logg}
 \affil[1]{Department of Mathematics, Texas A\&M University}
@@ -28,16 +29,18 @@
   Numerical Software.
 \end{abstract}
 
-\section{Implementation}
+\section{Usage}
 
 The file \texttt{ansarticle.cls} loads the standard LaTeX
-\texttt{article.cls} and applies some changes to the layout.
+\texttt{article.cls} and some additional packages. It also sets up the
+layout. Hardly any of the options of the packages are available to the
+author, in order to keep the journal style consistent.
 
 \subsection{Requirements}
 
-Test ccc $f(x) = u$
-
 Upon loading, \texttt{ansarticle.cls} requires the following packages:
+
+% TODO: Anders, please update!
 
 \begin{itemize}
 \item \texttt{times} and \texttt{mathptm} to use postscript fonts
@@ -47,74 +50,27 @@ Upon loading, \texttt{ansarticle.cls} requires the following packages:
   affiliation lists
 \item \texttt{listings} for source code listings
 \end{itemize}
-These packages are part of standard \TeX{} distributions.
+These packages are part of standard \TeX{} distributions and should
+not cause any difficulties.
 
-\section{Usage}
+\subsection{Mathematical formul\ae}
 
-Fill some pages so we see what it looks like:
+We recommend using the \texttt{amsmath} package for setting
+mathematical formul\ae{}, and we guarantee compatibility with the
+\texttt{ansarticle} style.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-vestibulum justo ut felis porttitor at egestas mauris varius. Etiam
-risus nibh, posuere vitae laoreet vitae, consectetur id risus. Vivamus
-adipiscing diam eget enim congue vel ultrices mi dignissim. Nullam
-volutpat, nunc eu ullamcorper tempus, eros orci rutrum enim, ac luctus
-nulla urna et felis. Sed auctor, dolor vel pellentesque tempus, magna
-tellus feugiat enim, nec rhoncus augue est sit amet nisl. Curabitur ac
-nisi eu orci porttitor egestas in sed tortor. Aliquam tincidunt orci
-vitae magna luctus eu gravida dolor hendrerit. Duis sit amet metus
-justo, vitae scelerisque neque. Nam vitae nisi eros. Curabitur
-convallis faucibus elit ut auctor. Morbi vel urna sit amet nisi
-pharetra laoreet. Maecenas vitae enim elit. Donec varius orci nisi, id
-blandit elit. Aliquam ornare pharetra ante, in porttitor erat mollis
-sed. Suspendisse potenti. Donec id tortor odio, et egestas
-eros. Aenean nec orci at diam porta tincidunt. Nam molestie tempus
-vestibulum. Praesent sed felis at est sodales elementum laoreet non
-risus. Nam urna augue, pulvinar et adipiscing vita
-e, auctor at sem.
+% TODO: [GK] What about math fonts
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-vestibulum justo ut felis porttitor at egestas mauris varius. Etiam
-risus nibh, posuere vitae laoreet vitae, consectetur id risus. Vivamus
-adipiscing diam eget enim congue vel ultrices mi dignissim. Nullam
-volutpat, nunc eu ullamcorper tempus, eros orci rutrum enim, ac luctus
-nulla urna et felis. Sed auctor, dolor vel pellentesque tempus, magna
-tellus feugiat enim, nec rhoncus augue est sit amet nisl. Curabitur ac
-nisi eu orci porttitor egestas in sed tortor. Aliquam tincidunt orci
-vitae magna luctus eu gravida dolor hendrerit. Duis sit amet metus
-justo, vitae scelerisque neque. Nam vitae nisi eros. Curabitur
-convallis faucibus elit ut auctor. Morbi vel urna sit amet nisi
-pharetra laoreet. Maecenas vitae enim elit. Donec varius orci nisi, id
-blandit elit. Aliquam ornare pharetra ante, in porttitor erat mollis
-sed. Suspendisse potenti. Donec id tortor odio, et egestas
-eros. Aenean nec orci at diam porta tincidunt. Nam molestie tempus
-vestibulum. Praesent sed felis at est sodales elementum laoreet non
-risus. Nam urna augue, pulvinar et adipiscing vita
-e, auctor at sem.
+\subsection{Supplementary material}
+Additional material, chich is not part of the article text, but part
+of the submission, for instance setup scripts or video output, can be
+linked from the article, using the \texttt{hyperref} commands
+(\texttt{hyperref} is automaticly included by
+\texttt{ansarticle}). URLs to such material should start with the
+filename. A suitable prefix will be added to the links in the
+editorial process.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-vestibulum justo ut felis porttitor at egestas mauris varius. Etiam
-risus nibh, posuere vitae laoreet vitae, consectetur id risus. Vivamus
-adipiscing diam eget enim congue vel ultrices mi dignissim. Nullam
-volutpat, nunc eu ullamcorper tempus, eros orci rutrum enim, ac luctus
-nulla urna et felis. Sed auctor, dolor vel pellentesque tempus, magna
-tellus feugiat enim, nec rhoncus augue est sit amet nisl. Curabitur ac
-nisi eu orci porttitor egestas in sed tortor. Aliquam tincidunt orci
-vitae magna luctus eu gravida dolor hendrerit. Duis sit amet metus
-justo, vitae scelerisque neque. Nam vitae nisi eros. Curabitur
-convallis faucibus elit ut auctor. Morbi vel urna sit amet nisi
-pharetra laoreet. Maecenas vitae enim elit. Donec varius orci nisi, id
-blandit elit. Aliquam ornare pharetra ante, in porttitor erat mollis
-sed. Suspendisse potenti. Donec id tortor odio, et egestas
-eros. Aenean nec orci at diam porta tincidunt. Nam molestie tempus
-vestibulum. Praesent sed felis at est sodales elementum laoreet non
-risus. Nam urna augue, pulvinar et adipiscing vita
-e, auctor at sem.
-
-\section{Testing some math}
-
-Consider $f(x) = x^2$
-
-\section{Code samples}
+\subsection{Code samples}
 
 All code listings are based on the \texttt{listings}
 package~\cite{HeinzMoses07}.  The style file \texttt{anslistings.sty},
@@ -127,9 +83,8 @@ Below, we provide samples of listings for the languages available. If
 a language is missing, please contact the managing editor for an
 updated style file.
 
-\subsection{C++}
-
-C++ code should be compliant with the current C++ standard. Two
+\subsubsection{C++}
+code should be compliant with the current C++ standard. Two
 commands are provided to prettyprint C++ code. First, an environment
 to put C++ code into the LaTeX file, namely
 
@@ -172,7 +127,9 @@ assert(cell_vertices.size());
 cell_vertices_partition.clear();
 \end{c++}
 
-\subsection{Python}
+\subsubsection{Python}
+can be typeset as well.
+
 \begin{python}
 # Time-stepping
 t = dt
@@ -216,6 +173,152 @@ while t < T + DOLFIN_EPS:
     p.update(t / T)
     t += dt
 \end{python}
+
+\section{Production after article was accepted}
+\subsection{Publication metadata}
+
+Create a file \texttt{ansinfo.tex} in the same directory. The file
+contains macros defining the publication information like in the
+following listing:
+
+\inputlatex{ansinfo.tex}
+
+
+\section{Philosophi\ae{} Naturalis Principia Mathematica}
+
+Excerpt from~\cite{Newton87}.
+
+\subsection{Pr\ae{}fatio ad Lectorem}
+
+Cum Veteres Mechanicam (uti Author est Pappus) in verum Naturalium
+investigatione maximi fecerint, \& recentiores, missis formis
+substantialibus \& qualitatibus occultis, Ph\ae{}nomena Natur\ae{} ad leges
+Mathematicas revocare aggressi sint: Visum est in hoc Tractatu
+Mathesin excolere quatenus ea ad Philosophiam spectat. Mechanicam vero
+duplicem Veteres constituerunt: Rationalem qu\ae{} per Demonstrationes
+accurate procedit, \& Practicam. Ad practicam spectant Artes omnes
+Manuales, a quibus utiq; Mechanica nomen mutuata est. Cum autem
+Artifices parum accurate operari soleant, fit ut Mechanica omnis a
+Geometria ita distinguatur, ut quicquid accuratum sit ad Geometriam
+referatur, quicquid minus accuratum ad Mechanicam. Attamen errores non
+sunt Artis sed Artificum. Qui minus accurate operatur, imperfectior
+est Mechanicus, \& si quis accuratissime operari posset, hic foret
+Mechanicus omnium perfectissimus. Nam \& Linearum rectarum \& Circulorum
+descriptiones in quibus Geometria fundatur, ad Mechanicam
+pertinent. Has lineas describere Geometria non docet sed
+postulat. Postulat enim ut Tyro easdem accurate describere prius
+didicerit quam limen attingat Geometri\ae{}; dein, quomodo per has
+operationes Problemata solvantur, docet. Rectas \& circulos describere
+Problemata sunt sed non Geometrica. Ex Mechanica postulatur horum
+solutio, in Geometria docetur solutorum usus. Ac gloriatur Geometria
+quod tam paucis principiis aliunde petitis tam multa pr\ae{}stet. Fundatur
+igitur Geometria in praxi Mechanica, \& nihil aliud est quam Mechanic\ae{}
+universalis pars illa qu\ae{} artem mensurandi accurate proponit ac
+demonstrat. Cum autem artes Manuales in corporibus movendis pr\ae{}cipue
+versentur, fit ut Geometria ad magnitudinem, Mechanica ad motum vulgo
+reseratur. Quo sensu Mechanica rationalis erit Scientia Motuum qui ex
+viribus quibuscunq; resultant, \& virium qu\ae{} ad motus quoscunq;
+requiruntur, accurate proposita ac demonstrata. Pars h\ae{}c Mechanic\ae{} a
+Veteribus in Potentiis quinque ad artes manuales spectantibus exculta
+fuit, qui Gravitatem (cum potentia manualis non sit) vix aliter quam
+in ponderibus per potentias illas movendis considerarunt. Nos autem
+non Artibus sed Philosophi\ae{} consulentes, deq; potentiis non manualibus
+sed naturalibus scribentes, ea maxime tractamus qu\ae{} ad Gravitatem,
+levitatem, vim Elasticam, resistentiam Fluidorum \& ejusmodi vires seu
+attractivas seu impulsivas spectant: Et ea propter h\ae{}c nostra tanquam
+Philosophi\ae{} principia Mathematica proponimus. Omnis enim Philosophi\ae{}
+difficultas in eo versari videtur, ut a Ph\ae{}nomenis motuum investigemus
+vires Natur\ae{}, deinde ab his viribus demonstremus ph\ae{}nomena reliqua. Et
+hac spectant Propositiones generales quas Libro primo \& secundo
+pertractavimus. In Libro autem tertio exemplum hujus rei proposuimus
+per explicationem Systematis mundani. Ibi enim, ex ph\ae{}nomenis
+c\ae{}lestibus, per Propositiones in Libris prioribus Mathematice
+demonstratas, derivantur vires gravitatis quibus corpora ad Solem \&
+Planetas singulos tendunt. Deinde ex his viribus per Propositiones
+etiam Mathematicas deducuntur motus Planetarum, Cometarum, Lun\ae{} \&
+Maris. Utinam c\ae{}tera Natur\ae{} ph\ae{}nomena ex principiis Mechanicis eodem
+argumentandi genere derivare liceret. Nam multa me movent ut nonnihil
+suspicer ea omnia ex viribus quibusdam pendere posse, quibus corporum
+particul\ae{} per causas nondum cognitas vel in se mutuo impelluntur \&
+secundum figuras regulares coh\ae{}rent, vel ab invicem fugantur \&
+recedunt: quibus viribus ignotis, Philosophi hactenus Naturam frustra
+tentarunt. Spero autem quod vel huic Philosophandi modo, vel veriori
+alicui, Principia hic posita lucem aliquam pr\ae{}bebunt.
+
+In his edendis, Vir acutissimus \& in omni literarum genere
+eruditissimus Edmundus Halleius operam navavit, nec solum Typothetarum
+Sphalmata correxit \& Schemata incidi curavit, sed etiam Author fuit ut
+horum editionem aggrederer. Quippe cum demonstratam a me figuram
+Orbium c\ae{}lestium impetraverat, rogare non destitit ut eadem cum
+Societate Regali communicarem, Qu\ae{} deinde hortatibus \& benignis suis
+auspiciis effecit ut de eadem in lucem emittenda cogitare
+inciperem. At postquam Motuum Lunarium in\ae{}qualitates aggressus essem,
+deinde etiam alia tentare c\ae{}pissem qu\ae{} ad leges mensuras Gravitatis \&
+aliarum virium, ad figuras a corporibus secundum datas quascunque
+leges attractis describendas, ad motus corporum plurium inter se, ad
+motus corporum in Mediis resistentibus, ad vires, densitates \& motus
+Mediorum, ad Orbes Cometarum \& similia spectant, editionem in aliud
+tempus differendam esse putavi, ut c\ae{}tera rimarer \& una in publicum
+darem. Qu\ae{} ad motus Lunares spectant, (imperfecta cum sint,) in
+Corollariis Propositionis LXVI. simul complexus sum, ne singula
+methodo prolixiore quam pro rei dignitate proponere, \& sigillatim
+demonstrare tenerer, \& seriem reliquarum Propositionum
+interrumpere. Nonnulla sero inventa locis minus idoneis inserere
+malui, quam numerum Propositionum \& citationes mutare. Ut omnia
+candide legantur, \& defectus, in materia tam difficili non tam
+reprehendantur, quam novis Lectorum conatibus investigentur, \& benigne
+suppleantur, enixe rogo.
+
+\subsection{Definitiones}
+
+\subsubsection{Def. I}
+Quantitas Materi\ae{} est mensura ejusdem orta ex illius Densitate \&
+Magnitudine conjunctim.
+
+\paragraph{Aer}  duplo densior in duplo spatio quadruplus est. Idem
+intellige de Nive et Pulveribus per compressionem vel liquefactionem
+condensatis. Et par est ratio corporum omnium, qu\ae{} per causas
+quascunq; diversimode condensantur. Medii interea, si quod fuerit,
+interstitia partium libere pervadentis, hic nullam rationem
+habeo. Hanc autem quantitatem sub nomine corporis vel Mass\ae{} in
+sequentibus passim intelligo. Innotescit ea per corporis cujusq;
+pondus. Nam ponderi proportionalem esse reperi per experimenta
+pendulorum accuratissime instituta, uti posthac docebitur.
+
+\subsubsection{Def. II}
+Quantitas motus est mensura ejusdem orta ex Velocitate et quantitate
+Materi\ae{} conjunctim.
+
+\paragraph{Motus}
+totius est summa motuum in partibus singulis, adeoq; in corpore duplo
+majore \ae{}quali cum Velocitate duplus est, et dupla cum Velocitate
+quadruplus.
+
+\subsubsection{Def. III}
+Materi\ae{} vis insita est potentia resistendi, qua corpus unumquodq;,
+quantum in se est, perseverat in statu suo vel quiescendi vel movendi
+uniformiter in directum.
+
+\paragraph{H\ae{}c}
+semper proportionalis est suo corpori, neq; differt quicquam ab
+inertia Mass\ae{}, nisi in modo concipiendi. Per inertiam materi\ae{} fit ut
+corpus omne de statu suo vel quiescendi vel movendi difficulter
+deturbetur. Unde etiam vis insita nomine significantissimo vis inerti\ae{}
+dici possit. Exercet vero corpus hanc vim solummodo in mutatione
+status sui per vim aliam in se impressam facta, estq; exercitium ejus
+sub diverso respectu et Resistentia et Impetus: Resistentia quatenus
+corpus ad conservandum statum suum reluctatur vi impress\ae{}; Impetus
+quatenus corpus idem, vi resistentis obstaculi difficulter cedendo,
+conatur statum ejus mutare. Vulgus Resistentiam quiescentibus et
+Impetum moventibus tribuit; sed motus et quies, uti vulgo
+concipiuntur, respectu solo distinguuntur ab invicem, neq; semper vere
+quiescunt qu\ae{} vulgo tanquam quiescentia spectantur.
+
+\subparagraph{A subparagraph} If you really want to nest that deeply, go
+ahead! But, while you might have enjoyed
+reading~\cite{Wittgenstein21,Wittgenstein81}, you are encouraged to
+question the applicability to a publication on a thing as profane as
+software.
 
 \bibliographystyle{abbrv}
 \bibliography{submitting}

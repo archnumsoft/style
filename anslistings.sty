@@ -66,7 +66,8 @@ backgroundcolor=\color{yellow!10}
 
 %--- Typesetting LaTeX ---
 \lstnewenvironment{latexcode}{\lstset{language=[LaTeX]TeX,style=c@mmon}}{}
-\newcommand{\latexinline}{\lstinline[language=TeX,style=c@mmon,basicstyle=\ttfamily]}
+\newcommand{\inputlatex}[1]{\lstset{language=[LaTeX]TeX,style=c@mmon}%
+  \lstinputlisting{#1}}
 
 %--- C++ ---
 
