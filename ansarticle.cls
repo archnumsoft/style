@@ -8,13 +8,18 @@
 \LoadClass[twoside,a4paper]{article}
 
 % Load packages
-\RequirePackage[hyperfootnotes=false]{hyperref}
-\RequirePackage{listings}
-\RequirePackage{fancyhdr}
-\RequirePackage[noblocks]{authblk}
 \RequirePackage{a4wide}
-\RequirePackage{lastpage}
 \RequirePackage{anslistings}
+\RequirePackage{algorithm,algorithmicx}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{booktabs}
+\RequirePackage{fancyhdr}
+\RequirePackage{graphicx}
+\RequirePackage[hyperfootnotes=false]{hyperref}
+\RequirePackage[noblocks]{authblk}
+\RequirePackage{lastpage}
+\RequirePackage{listings}
+\RequirePackage[colorinlistoftodos,textwidth=4cm,shadow]{todonotes}
 
 % Font selection
 \RequirePackage[T1]{fontenc}
@@ -63,7 +68,6 @@
 \fi
 
 % Page headers and footers
-% FIXME: (AL) Handle volume, number, year
 \fancyhead[RO, LE]{\thepage}
 \fancyhead[LO]{\@runningtitle}
 \fancyhead[RE]{\@runningauthor}
@@ -90,8 +94,7 @@
         Archive of Numerical Software\\
         vol. \ANSvolume, no. \ANSnumber, pages 1--\pageref*{LastPage}\\
         \copyright{} \ANSyear}}
-  
-  \vskip 60\p@ % FIXME: (AL) What does this line do?
+  \vskip 60\p@
   \begin{center}
     {\LARGE \textsf{\textbf{\@title}} \par}
     \vskip 8mm
@@ -100,12 +103,12 @@
   \end{center}\par
   % Affiliation stuff
   \@thanks
-  
+  % Paper received
   \vskip 3mm
   \textbf{\sffamily Received: }\ANSreceived;
-  \textbf{ \sffamily final revision:} \ANSrevised;
-  \textbf{ \sffamily published:} \ANSpublished.
-
+  \textbf{\sffamily final revision:} \ANSrevised;
+  \textbf{\sffamily published:} \ANSpublished.
+  % Some more fixes
   \vskip 3mm
   \setcounter{footnote}{0}%
   \global\let\thanks\relax
@@ -118,9 +121,25 @@
   \global\let\author\relax
   \global\let\date\relax
   \global\let\and\relax
-
   % No headers/footers on front page
   \thispagestyle{empty}
 }
 
+% Abstract heading
 \renewenvironment{abstract}{\textsf{\textbf{Abstract: }}}{}
+
+% Useful macro
+\newcommand{\fixme}[1]{\todo[inline, color=red!40]{#1}}
+
+% FIXME: Discuss whether to include these
+% Some useful notation macros
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dx}{\,\mathrm{d}x}
+\newcommand{\dX}{\,\mathrm{d}X}
+\newcommand{\ds}{\,\mathrm{d}s}
+\newcommand{\dS}{\,\mathrm{d}S}
+\newcommand{\dt}{\,\mathrm{d}t}
+\newcommand{\inner}[2]{\langle #1, #2 \rangle}
+\newcommand{\nedelec}{N\'ed\'elec}
+\newcommand{\babuska}{Babu\v{s}ka}
+\newcommand{\emp}[1]{\texttt{#1}}
