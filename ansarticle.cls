@@ -10,16 +10,19 @@
 % Load packages
 \RequirePackage{a4wide}
 \RequirePackage{anslistings}
-\RequirePackage{algorithm,algorithmicx}
+\RequirePackage{algorithm,algorithmicx,algpseudocode}
 \RequirePackage{amsmath,amssymb}
+\RequirePackage[noblocks]{authblk}
 \RequirePackage{booktabs}
 \RequirePackage{fancyhdr}
 \RequirePackage{graphicx}
 \RequirePackage[hyperfootnotes=false]{hyperref}
-\RequirePackage[noblocks]{authblk}
+\RequirePackage{natbib}
+
 \RequirePackage{lastpage}
 \RequirePackage{listings}
 \RequirePackage[colorinlistoftodos,textwidth=4cm,shadow]{todonotes}
+
 
 % Font selection
 \RequirePackage[T1]{fontenc}
@@ -131,7 +134,6 @@
 % Useful macro
 \newcommand{\fixme}[1]{\todo[inline, color=red!40]{#1}}
 
-% FIXME: Discuss whether to include these
 % Some useful notation macros
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\dx}{\,\mathrm{d}x}

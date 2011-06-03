@@ -1,6 +1,6 @@
 %% Listings environments for Archive of Numerical Software.
 %%
-%% The following listings environments are provided
+%% The following listings environments are provided:
 %%
 %% c++        for C++ code
 %% python     for Python code
@@ -18,7 +18,8 @@
 %%
 %% Modified for ANS by Anders Logg, 2011.
 %%
-%% Last modified: 2011-05-16
+%% First added:   2011-05-16
+%% Last modified: 2011-06-03
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{anslistings}[2009/03/28 code highlighting; provided by Olivier Verdier <olivier@maths.lth.se>]
@@ -30,7 +31,7 @@
 % Basic setup
 \renewcommand{\lstlistlistingname}{Code Listings}
 \renewcommand{\lstlistingname}{Code Listing}
-\newcommand{\codetitlestyle}[1]{\small\textit{#1}\hspace{0.1cm}}
+\newcommand{\codetitlestyle}[1]{\small\textit{#1}}
 \newcommand{\belowtitleskip}{2pt}
 \newcommand{\captionposition}{t}
 \newcommand{\framemargin}{0.5ex}
@@ -56,11 +57,14 @@ tab=,
 tabsize=2,
 basicstyle=\ttfamily\footnotesize,
 breaklines=true,
-breakatwhitespace= true,
+breakatwhitespace=true,
 aboveskip=1ex,
 frame=trbl,
 rulecolor=\color{black},
-backgroundcolor=\color{yellow!10}
+backgroundcolor=\color{yellow!10},
+xleftmargin=5pt,
+xrightmargin=5pt,
+numbers=left
 }
 \lstset{style=c@mmon}
 
@@ -122,7 +126,7 @@ morestring=[d][stringstyle]'
 \lstnewenvironment{c++}[1][]{\lstset{style=cppstyle, title={\codetitlestyle{C++ code}}, belowcaptionskip=\belowtitleskip}}{}
 \newcommand{\cpp}{\lstinline[style=cppstyle,basicstyle=\ttfamily]}
 
-%--- Python ---
+%--- Typesetting Python ---
 
  \lstdefinestyle{pythonstyle}{
  language=python,
@@ -145,8 +149,6 @@ morestring=[d][stringstyle]'
  emphstyle=[3]\color{commandcolour},
  emph={Exception,NameError,IndexError,SyntaxError,TypeError,ValueError,OverflowError,ZeroDivisionError},
  emphstyle=\color{exceptioncolour}\bfseries,
-% morestring=[s]{"""}{"""},
-% morestring=[s]{'''}{'''},
  commentstyle=\color{commentcolour}\slshape,
  emph={[4]ode, fsolve, sqrt, exp, sin, cos, arccos, pi,  array, norm, solve, dot, arange, , isscalar, max, sum, flatten, shape, reshape, find, any, all, abs, plot, linspace, legend, quad, polyval,polyfit, hstack, concatenate,vstack,column_stack,empty,zeros,ones,rand,vander,grid,pcolor,eig,eigs,eigvals,svd,qr,tan,det,logspace,roll,min,mean,cumsum,cumprod,diff,vectorize,lstsq,cla,eye,xlabel,ylabel,squeeze},
  emphstyle=[4]\color{numpycolour},
@@ -181,7 +183,7 @@ morestring=[d][stringstyle]'
 \lstnewenvironment{python}[1][]{\lstset{style=pythonstyle,title={\codetitlestyle{Python code }},belowcaptionskip=\belowtitleskip}}{}
 \newcommand{\pyth}{\lstinline[style=pythonstyle,basicstyle=\ttfamily]}
 
-%--- XML ---
+%--- Typesetting XML ---
 
 \lstdefinestyle{xmlstyle}{
 language=xml,
@@ -206,7 +208,7 @@ backgroundcolor=\color{yellow!10}
 \newcommand{\inputxml}[1]{\lstinputlisting[style=xmlstyle, title={\codetitlestyle{XML code}}, belowcaptionskip=\belowtitleskip]{#1}}
 \lstnewenvironment{xml}[1][]{\lstset{style=xmlstyle, title={\codetitlestyle{XML code}}, belowcaptionskip=\belowtitleskip}}{}
 
-% %--- Bash ---
+%--- Typesetting Bash ---
 
 \lstdefinestyle{bashstyle}{
 language=bash,
@@ -233,17 +235,17 @@ backgroundcolor=\color{yellow!10}
 \lstnewenvironment{bash}[1][]{\lstset{style=bashstyle, title={\codetitlestyle{Bash code}}, belowcaptionskip=\belowtitleskip}}{}
 \lstnewenvironment{csh}[1][]{\lstset{style=bashstyle, title={\codetitlestyle{Csh code}}, belowcaptionskip=\belowtitleskip}}{}
 
-% %--- SWIG ---
+%--- SWIG ---
 
 \newcommand{\inputswig}[1]{\lstinputlisting[style=cppstyle, title={\codetitlestyle{SWIG code}}, belowcaptionskip=\belowtitleskip]{#1}}
 \lstnewenvironment{swigcode}[1][]{\lstset{style=cppstyle, title={\codetitlestyle{SWIG code}}, belowcaptionskip=\belowtitleskip}}{}
 
-% %--- UFL ---
+%--- UFL ---
 
 \newcommand{\inputufl}[1]{\lstinputlisting[style=pythonstyle, title={\codetitlestyle{UFL code}}, belowcaptionskip=\belowtitleskip]{#1}}
 \lstnewenvironment{uflcode}[1][]{\lstset{style=pythonstyle, title={\codetitlestyle{UFL code}}, belowcaptionskip=\belowtitleskip}}{}
 
-% %--- MATLAB ---
+%--- MATLAB ---
 
 \lstnewenvironment{matlab}[1][]{
 \lstset{
@@ -257,7 +259,7 @@ commentstyle=\color{commentcolour}\slshape,
 keywordstyle=\color{keywordcolour}\bfseries,
 }}{}
 
-% %--- Other ---
+%--- Other ---
 
 \lstdefinestyle{anycodestyle}{
 language=bash,
@@ -282,11 +284,11 @@ backgroundcolor=\color{yellow!10}
 \newcommand{\inputanycode}[1]{\lstinputlisting[style=anycodestyle, title={\codetitlestyle{Code}}, belowcaptionskip=\belowtitleskip]{#1}}
 \lstnewenvironment{anycode}[1][]{\lstset{style=anycodestyle, title={\codetitlestyle{Code}}, belowcaptionskip=\belowtitleskip}}{}
 
-% %--- Output from running programs ---
+%--- Output from running programs ---
 
 \lstnewenvironment{progoutput}[1][]{\lstset{style=gencodestyle, title={\codetitlestyle{Output}}, belowcaptionskip=\belowtitleskip}}{}
 
-% %--- Generated code ---
+%--- Generated code ---
 
 \lstdefinestyle{gencodestyle}{
 language=bash,
