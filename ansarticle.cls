@@ -57,7 +57,7 @@
 \newread\datafile
 \openin\datafile=ansinfo
 \ifeof\datafile
-\message{File datafile.tex with volume, number, and year is missing}
+\message{File ansinfo.tex with volume, number, and year is missing}
 \def\ANSreceived{never}
 \def\ANSrevised{never}
 \def\ANSaccepted{never}
