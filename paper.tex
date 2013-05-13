@@ -4,23 +4,16 @@
 
 \title{Preparing articles for submission to the \\
        Archive of Numerical Software}
-%\author[1]{Wolfgang Bangerth}
-%\author[2]{Peter Bastian}
-\author[1]{Guido Kanschat\thanks{Additional thanks to my neighbor's dog
+\author[1]{Editor O. Archive\thanks{Additional thanks to my neighbor's dog
   for waking me up on time to work on this style file}}
-%\author[3]{Michael Heroux}
-\author[2]{Anders Logg}
-%\affil[1]{Department of Mathematics, Texas A\&M University}
-\affil[1]{IWR, Universit\"at Heidelberg}
-%\affil[3]{Sandia National Laboratories}
-\affil[2]{Simula Research Laboratory}
+\author[2]{Author O. Software}
+\affil[1]{The Archive of Numerical Software}
+\affil[2]{The Worlds Best Place for Numerical Software}
 \runningtitle{Preparing articles for ANS}
-\runningauthor{Kanschat, Logg}
+\runningauthor{Archive Editors}
 
 %------------------------------------------------------------------------------
 \begin{document}
-
-\fixme{Who should be listed as authors on this document?}
 
 \maketitle
 
@@ -285,128 +278,98 @@ notation macros which you can find by browsing through the file
 
 \subsection{Checklist}
 
-\fixme{Add more things to this checklist!}
-
 Before submitting your manuscript to ANS, please review the following
 checklist:
-\begin{itemize}
+\begin{enumerate}
 \item
   Have you run a spell checker on your manuscript (using an American English
   dictionary)?
+\item
+  Have you referenced all libraries you have been using and the
+  appropriate versions and descriptive publications?
 \item
   Have you referred to all figures and tables (callouts)?
 \item
   Have you used a scalable vector graphics format for all images where
   possible?
-\end{itemize}
+\end{enumerate}
+
+Before submitting your source code to ANS, please review the following
+checklist:
+\begin{enumerate}
+\item Does a simple 'make' or similar build and run the program in a
+  default configuration?
+\item Did you include all configuration information necessary?
+\item Did you include instructions on how to reproduce the examples in
+  the text?
+\end{enumerate}
 
 %------------------------------------------------------------------------------
 \section{Production after article was accepted}
-\subsection{Publication metadata}
 
-Create a file \emp{ansinfo.tex} in the same directory. The file
-contains macros defining the publication information like in the
-following listing:
+\subsection{The manuscript}
+
+Once the article is accepted, the editor will send you a file
+\emp{ansinfo.tex} in the same directory. The file contains macros
+defining the publication information like in the following listing:
 
 \inputlatex{ansinfo.tex}
 
-\fixme{Should this section contain some more info?}
+Please copy this file where \LaTeX{} can find it and recompile your
+manuscript to produce the finale version of the PDF.
+
+\subsection{The source code}
+
+If necessary, clean up the source code directory. Make sure you
+include only the files readers should download with the source (see
+the next subsection on media files). Make sure, a simple 'make' or
+similar will run a first example. Assert that the data in the
+manuscript can be reproduced.
+
+\subsection{The media directory}
+
+Every article comes with a media directory. This directory contains a
+file \texttt{index.html} which is linked from the article page and
+should serve as an entry point to your media files. The minimum
+requirement on this file is the following head:
+
+\begin{lstlisting}[language=html]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>ANS V(N) Authors: Title</title>
+  <link rel="stylesheet" type="text/css" href="/ans.css"/>
+</head>
+
+<body>
+  <h2>Archive of Numerical Software V(N)</h2>
+  <h1>Title</h1>
+  <h2>Authors</h2>
+
+  Text and links
+</body>
+</html>
+\end{lstlisting}
+
+The occurences of \lstinline[language=html]!V(N)! should be replaced
+by the assigned volume and number of the publication,
+\lstinline[language=html]!Title! and
+\lstinline[language=html]!Authors! accordingly.  You are welcome to
+use image tags in this file.
+
+Add your image files and movies to this directory, not to the source
+code!
 
 %------------------------------------------------------------------------------
 \section{Philosophi\ae{} Naturalis Principia Mathematica}
 
-\fixme{Add missing references (Newton and Wittgenstein) to
-  bibliography.}
-
 \fixme{Also add main references for all libraries listed on the ANS
   web page.}
 
-\fixme{Can we cut down some on the text here? It's pretty long.}
-
-Excerpt from~\citet{Newton1687}.
-
-\subsection{Pr\ae{}fatio ad Lectorem}
-
-Cum Veteres Mechanicam (uti Author est Pappus) in verum Naturalium
-investigatione maximi fecerint, \& recentiores, missis formis
-substantialibus \& qualitatibus occultis, Ph\ae{}nomena Natur\ae{} ad
-leges Mathematicas revocare aggressi sint: Visum est in hoc Tractatu
-Mathesin excolere quatenus ea ad Philosophiam spectat. Mechanicam vero
-duplicem Veteres constituerunt: Rationalem qu\ae{} per Demonstrationes
-accurate procedit, \& Practicam. Ad practicam spectant Artes omnes
-Manuales, a quibus utiq; Mechanica nomen mutuata est. Cum autem
-Artifices parum accurate operari soleant, fit ut Mechanica omnis a
-Geometria ita distinguatur, ut quicquid accuratum sit ad Geometriam
-referatur, quicquid minus accuratum ad Mechanicam. Attamen errores non
-sunt Artis sed Artificum. Qui minus accurate operatur, imperfectior
-est Mechanicus, \& si quis accuratissime operari posset, hic foret
-Mechanicus omnium perfectissimus. Nam \& Linearum rectarum \&
-Circulorum descriptiones in quibus Geometria fundatur, ad Mechanicam
-pertinent. Has lineas describere Geometria non docet sed
-postulat. Postulat enim ut Tyro easdem accurate describere prius
-didicerit quam limen attingat Geometri\ae{}; dein, quomodo per has
-operationes Problemata solvantur, docet. Rectas \& circulos describere
-Problemata sunt sed non Geometrica. Ex Mechanica postulatur horum
-solutio, in Geometria docetur solutorum usus. Ac gloriatur Geometria
-quod tam paucis principiis aliunde petitis tam multa
-pr\ae{}stet. Fundatur igitur Geometria in praxi Mechanica, \& nihil
-aliud est quam Mechanic\ae{} universalis pars illa qu\ae{} artem
-mensurandi accurate proponit ac demonstrat. Cum autem artes Manuales
-in corporibus movendis pr\ae{}cipue versentur, fit ut Geometria ad
-magnitudinem, Mechanica ad motum vulgo reseratur. Quo sensu Mechanica
-rationalis erit Scientia Motuum qui ex viribus quibuscunq; resultant,
-\& virium qu\ae{} ad motus quoscunq; requiruntur, accurate proposita
-ac demonstrata. Pars h\ae{}c Mechanic\ae{} a Veteribus in Potentiis
-quinque ad artes manuales spectantibus exculta fuit, qui Gravitatem
-(cum potentia manualis non sit) vix aliter quam in ponderibus per
-potentias illas movendis considerarunt. Nos autem non Artibus sed
-Philosophi\ae{} consulentes, deq; potentiis non manualibus sed
-naturalibus scribentes, ea maxime tractamus qu\ae{} ad Gravitatem,
-levitatem, vim Elasticam, resistentiam Fluidorum \& ejusmodi vires seu
-attractivas seu impulsivas spectant: Et ea propter h\ae{}c nostra
-tanquam Philosophi\ae{} principia Mathematica proponimus. Omnis enim
-Philosophi\ae{} difficultas in eo versari videtur, ut a Ph\ae{}nomenis
-motuum investigemus vires Natur\ae{}, deinde ab his viribus
-demonstremus ph\ae{}nomena reliqua. Et hac spectant Propositiones
-generales quas Libro primo \& secundo pertractavimus. In Libro autem
-tertio exemplum hujus rei proposuimus per explicationem Systematis
-mundani. Ibi enim, ex ph\ae{}nomenis c\ae{}lestibus, per Propositiones
-in Libris prioribus Mathematice demonstratas, derivantur vires
-gravitatis quibus corpora ad Solem \& Planetas singulos
-tendunt. Deinde ex his viribus per Propositiones etiam Mathematicas
-deducuntur motus Planetarum, Cometarum, Lun\ae{} \& Maris. Utinam
-c\ae{}tera Natur\ae{} ph\ae{}nomena ex principiis Mechanicis eodem
-argumentandi genere derivare liceret. Nam multa me movent ut nonnihil
-suspicer ea omnia ex viribus quibusdam pendere posse, quibus corporum
-particul\ae{} per causas nondum cognitas vel in se mutuo impelluntur
-\& secundum figuras regulares coh\ae{}rent, vel ab invicem fugantur \&
-recedunt: quibus viribus ignotis, Philosophi hactenus Naturam frustra
-tentarunt. Spero autem quod vel huic Philosophandi modo, vel veriori
-alicui, Principia hic posita lucem aliquam pr\ae{}bebunt.
-
-In his edendis, Vir acutissimus \& in omni literarum genere
-eruditissimus Edmundus Halleius operam navavit, nec solum Typothetarum
-Sphalmata correxit \& Schemata incidi curavit, sed etiam Author fuit ut
-horum editionem aggrederer. Quippe cum demonstratam a me figuram
-Orbium c\ae{}lestium impetraverat, rogare non destitit ut eadem cum
-Societate Regali communicarem, Qu\ae{} deinde hortatibus \& benignis suis
-auspiciis effecit ut de eadem in lucem emittenda cogitare
-inciperem. At postquam Motuum Lunarium in\ae{}qualitates aggressus essem,
-deinde etiam alia tentare c\ae{}pissem qu\ae{} ad leges mensuras Gravitatis \&
-aliarum virium, ad figuras a corporibus secundum datas quascunque
-leges attractis describendas, ad motus corporum plurium inter se, ad
-motus corporum in Mediis resistentibus, ad vires, densitates \& motus
-Mediorum, ad Orbes Cometarum \& similia spectant, editionem in aliud
-tempus differendam esse putavi, ut c\ae{}tera rimarer \& una in publicum
-darem. Qu\ae{} ad motus Lunares spectant, (imperfecta cum sint,) in
-Corollariis Propositionis LXVI. simul complexus sum, ne singula
-methodo prolixiore quam pro rei dignitate proponere, \& sigillatim
-demonstrare tenerer, \& seriem reliquarum Propositionum
-interrumpere. Nonnulla sero inventa locis minus idoneis inserere
-malui, quam numerum Propositionum \& citationes mutare. Ut omnia
-candide legantur, \& defectus, in materia tam difficili non tam
-reprehendantur, quam novis Lectorum conatibus investigentur, \& benigne
-suppleantur, enixe rogo.
+As an example text, we present an excerpt from~\citet{Newton1687}.
 
 \subsection{Definitiones}
 
@@ -460,6 +423,6 @@ reading~\citet{Wittgenstein1921,Wittgenstein1981}, you are encouraged to
 question the applicability to a publication on a thing as profane as
 software.
 
-\bibliographystyle{abbrv}
+\bibliographystyle{abbrvnat}
 \bibliography{submitting}
 \end{document}
