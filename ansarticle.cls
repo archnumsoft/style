@@ -14,7 +14,7 @@
 \RequirePackage{booktabs}
 \RequirePackage{fancyhdr}
 \RequirePackage{graphicx}
-\RequirePackage[hyperfootnotes=false]{hyperref}
+\RequirePackage[hyperfootnotes=false,colorlinks,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
 \RequirePackage{natbib}
 
 \RequirePackage{lastpage}
