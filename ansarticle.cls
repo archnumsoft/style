@@ -1,5 +1,3 @@
-% $Id$
-
 % FIXME: (AL) Need to choose a license for this style, I suggest GFDL
 
 % Basic setup
