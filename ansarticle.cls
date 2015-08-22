@@ -86,7 +86,7 @@
 \renewcommand*{\title}[2][]{\gdef\s@title{#1}\gdef\@title{#2}}
 \renewcommand{\Authfont}{\large\sffamily}
 \renewcommand{\Affilfont}{\normalsize\sffamily}
-\renewcommand{\maketitle}{
+\renewcommand{\maketitle}{{
   % Footnote stuff
   \let\footnotesize\small
   \def\footnoterule{\vspace*{-3pt}\rule{.4\columnwidth}{.4pt}\vspace*{2.6pt}}
@@ -126,7 +126,7 @@
   \global\let\and\relax
   % No headers/footers on front page
   \thispagestyle{empty}
-}
+}}
 
 % Abstract heading
 \renewenvironment{abstract}{\textsf{\textbf{Abstract: }}}{}
