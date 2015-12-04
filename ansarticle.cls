@@ -51,6 +51,12 @@
 \newcommand{\runningtitle}[1]{\gdef\@runningtitle{#1}}
 \newcommand{\runningauthor}[1]{\gdef\@runningauthor{#1}}
 
+% PDF file headers
+% \hypersetup{
+%   pdftitle = {\@title},
+%   pdfauthor = {\@author}
+% }
+
 % Formatting volume and article number
 \newread\datafile
 \openin\datafile=ansinfo
@@ -93,7 +99,7 @@
   % Title
   \hfill\fboxrule2pt\fboxsep3mm\fbox{\parbox{5cm}{\centering
         Archive of Numerical Software\\
-        vol. \ANSvolume, no. \ANSnumber, pages 1--\pageref*{LastPage}\\
+        vol. \ANSvolume, no. \ANSnumber, pages \thepage--\pageref*{LastPage}\\
         \copyright{} \ANSyear}}
   \vskip 60\p@
   \begin{center}
