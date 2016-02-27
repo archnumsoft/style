@@ -69,6 +69,7 @@
 \def\ANSvolume{VV}
 \def\ANSnumber{NN}
 \def\ANSyear{1677}
+\def\ANSDOI{DOI}
 \else
 \closein\datafile
 \input{ansinfo}
@@ -97,10 +98,10 @@
   \renewcommand\thefootnote{\sffamily\@fnsymbol\c@footnote}
   \let\footnote\thanks
   % Title
-  \hfill\fboxrule2pt\fboxsep3mm\fbox{\parbox{5cm}{\centering
+  \hfill\fboxrule2pt\fboxsep3mm\fbox{\parbox{7cm}{\centering
         Archive of Numerical Software\\
-        vol. \ANSvolume, no. \ANSnumber, pages \thepage--\pageref*{LastPage}\\
-        \copyright{} \ANSyear}}
+        vol. \ANSvolume, no. \ANSnumber, \ANSyear, pages \thepage--\pageref*{LastPage}\\
+        DOI: \ANSDOI}}
   \vskip 60\p@
   \begin{center}
     {\LARGE \textsf{\textbf{\@title}} \par}
